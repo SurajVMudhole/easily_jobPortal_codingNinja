@@ -5,6 +5,7 @@ import ejsLayouts from "express-ejs-layouts";
 import bodyParser from "body-parser";
 //------------------------------------------------------------------------------
 //import costom file
+import HomeController from "./src/controller/home.controller.js";
 //------------------------------------------------------------------------------
 //set server here
 const server = express();
@@ -15,6 +16,7 @@ server.set("view engine", "ejs");
 server.set("views", path.join(path.resolve(), "src", "views"));
 //------------------------------------------------------------------------------
 //create Instance for controller
+const homeController = new HomeController();
 //------------------------------------------------------------------------------
 //set Middleware configs
 server.use(ejsLayouts);
@@ -24,9 +26,8 @@ server.use(express.static("src/views"));
 server.use(express.static("public"));
 //------------------------------------------------------------------------------
 //set path router starts here
-server.get("/", (req, res) => {
-  return res.status(200).render("home");
-});
+server.get("/", homeController.getHomePage);
+server.get("/jobs", homeController.getJobsPage);
 
 //set path router Ends here
 //------------------------------------------------------------------------------

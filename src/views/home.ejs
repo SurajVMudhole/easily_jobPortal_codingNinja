@@ -1,8 +1,4 @@
 <link rel="stylesheet" href="./css/home.css" />
-<link
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
-  rel="stylesheet"
-/>
 <div class="container">
   <div class="homebox">
     <div class="left">
@@ -51,7 +47,7 @@
         </div>
         <div class="modal-body">
           <!-- Register form  -->
-          <form>
+          <form action="/register" method="post">
             <div class="input-group flex-nowrap mt-2">
               <span class="input-group-text" id="addon-wrapping">Name</span>
               <input
@@ -94,7 +90,13 @@
               <p>
                 Already Registed?
                 <span
-                  ><button class="btn btn-outline-success">Login</button></span
+                  ><button
+                    class="btn btn-outline-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal"
+                  >
+                    Login
+                  </button></span
                 >
               </p>
             </div>
@@ -111,6 +113,68 @@
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- login form  -->
+            <form action="/login" method="post">
+              <div class="input-group flex-nowrap mt-2">
+                <span class="input-group-text" id="addon-wrapping">Email</span>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter Your Email"
+                  name="email"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <div class="input-group flex-nowrap mt-2">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Password</span
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Password"
+                  name="password"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <button type="submit" class="btn btn-outline-success mt-4">
+                Submit
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>

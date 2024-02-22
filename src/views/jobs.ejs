@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="./css/home.css" />
+<div class="container">
+  <div class="job-box">
+    <% jobs.forEach((job)=>{%>
+    <!-- job card start here -->
+    <div class="job-card">
+      <button
+        type="button"
+        class="btn btn-primary mb-2"
+        disabled
+        data-bs-toggle="button"
+      >
+        Actively hiring <i class="ri-line-chart-fill"></i>
+      </button>
+      <h2 class="company-name mt-2"><%= job.companyName %></h2>
+      <h3 class="mb-2">
+        Tech <span class="job-role"><%= job.jobDesignation%></span>
+      </h3>
+      <p class="mb-2">
+        <i class="ri-map-pin-fill"></i>
+        <%=job.jobLocation%>
+      </p>
+      <p class="mb-2">
+        <i class="ri-money-rupee-circle-line"></i>
+        <%= job.salaryRange%> LPA
+      </p>
+      <div class="card-skillset grid text-center">
+        <% job.skillsRequired.forEach((skill)=>{%>
+        <button
+          class="btn btn-outline-primary mb-2"
+          style="font-weight: 500; font-size: 18px"
+        >
+          <%= skill%>
+        </button>
+        <%})%>
+      </div>
+      <a href="/jobs/<%= job.id%>"
+        ><button class="btn btn-outline-success mt-2" style="width: 100%">
+          View Details
+        </button></a
+      >
+    </div>
+    <!-- job card ends here -->
+    <% }) %>
+  </div>
+</div>

@@ -13,6 +13,8 @@ body {
   height: 100%;
 }
 
+/* Home CSS Start here */
+
 .homebox {
   width: 100%;
   height: 100%;
@@ -20,7 +22,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
 }
 
 .right {
@@ -87,3 +88,42 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+
+/* Home CSS Ends Here */
+
+/* JObs CSS Start Here */
+
+.job-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.job-card {
+  width: 30%;
+  height: auto;
+  background-color: none;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid white;
+  color: white;
+}
+
+.company-name {
+  color: yellow;
+  text-transform: uppercase;
+}
+
+.job-role {
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+
+.job-card > p {
+  font-size: 18px;
+}
+
+/* JObs CSS Ends Here */
