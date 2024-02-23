@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 //------------------------------------------------------------------------------
 //import costom file
 import HomeController from "./src/controller/home.controller.js";
+import jobApplyRequest from "./src/middleware/applyJob.valllidate.js";
 //------------------------------------------------------------------------------
 //set server here
 const server = express();
@@ -28,6 +29,8 @@ server.use(express.static("public"));
 //set path router starts here
 server.get("/", homeController.getHomePage);
 server.get("/jobs", homeController.getJobsPage);
+server.get("/jobs/:id", homeController.getJobDetails);
+server.post("/applyJob/:id", homeController.postJobApply);
 
 //set path router Ends here
 //------------------------------------------------------------------------------

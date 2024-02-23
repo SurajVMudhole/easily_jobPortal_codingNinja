@@ -13,6 +13,13 @@ body {
   height: 100%;
 }
 
+.red_error {
+  font-family: var(--scnd-font);
+  font-weight: bold;
+  color: red;
+  font-size: 40px;
+}
+
 /* Home CSS Start here */
 
 .homebox {
@@ -126,4 +133,13 @@ body {
   font-size: 18px;
 }
 
-/* JObs CSS Ends Here */
+/* Jobs CSS Ends Here */
+
+/* job details css stats here */
+
+.jobDlist {
+  list-style: none;
+  margin-top: 5px;
+}
+
+/* job details css ends here */

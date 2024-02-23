@@ -25,6 +25,9 @@ export default class JobsModel {
   static getJobs() {
     return jobsArray;
   }
+  static getJobById(id) {
+    return jobsArray.find((j) => j.id == id);
+  }
 }
 
 var jobsArray = [
@@ -34,10 +37,10 @@ var jobsArray = [
     "Backend Developer",
     "New Delhi",
     "Coding Ninjas",
-    "16-17 LPA",
-    "2023-12-23",
-    "HTML, CSS, Javascript, Tailwind",
-    19
+    "6-7 LPA",
+    "2023-09-20",
+    ["NodeJs", "MySQL", " Javascript", " Axois"],
+    5
   ),
 
   new JobsModel(
@@ -48,19 +51,19 @@ var jobsArray = [
     "Google",
     "16-18 LPA",
     "2023-11-23",
-    "HTML, CSS, Javascript, Bootstrap",
-    19
+    ["HTML", "CSS", " Javascript", "Bootstrap"],
+    6
   ),
 
   new JobsModel(
     3,
     "On-Site",
     "Full-Stack Developer",
-    "Tokyo, Japan",
-    "Microsoft",
-    "16-18 LPA",
-    "2023-11-23",
-    "HTML, CSS, Javascript, Bootstrap",
-    19
+    " Banglore",
+    "Zomato",
+    "4-6 LPA",
+    "2023-10-2",
+    ["NodeJs", "Javascript", "Docker"],
+    1
   ),
 ];

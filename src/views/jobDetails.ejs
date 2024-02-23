@@ -1,0 +1,153 @@
+<div class="container mt-3">
+  <div class="card mb-2">
+    <img
+      src="https://files.codingninjas.com/web-banner-28759.png"
+      class="card-img-top"
+      alt="Job image"
+    />
+    <div class="card-body">
+      <h1 class="card-title">
+        <span><%=job.jobCategory%></span>&nbsp;Job oppertunity in
+        <span><%=job.jobLocation%></span>
+      </h1>
+      <h2 class="mt-2" style="color: mediumvioletred; font-size: 40px">
+        <%= job.companyName%>
+      </h2>
+      <h5>
+        Tech<span style="color: green">&nbsp;<%=job.jobDesignation%></span>
+      </h5>
+      <ul class="jobDlist">
+        <li>
+          <i class="ri-map-pin-fill"></i>&nbsp;Location&nbsp;
+          <%=job.jobLocation%>
+        </li>
+        <li>
+          <i class="ri-money-rupee-circle-line"></i>&nbsp;Salary&nbsp;
+          <%=job.salaryRange%>
+        </li>
+        <li>
+          <i class="ri-calendar-schedule-fill"></i>&nbsp;Apply By&nbsp;
+          <%=job.applyBy%>
+        </li>
+        <li>
+          <i class="ri-armchair-line"></i>&nbsp;Number of openings&nbsp;
+          <%=job.numberOfOpenings%>
+        </li>
+        <li id="seprate">
+          <i class="ri-team-fill"></i>&nbsp;Applicants 2&nbsp;
+        </li>
+      </ul>
+      <div class="mb-3">
+        <h4>Skills Required</h4>
+        <% job.skillsRequired.forEach((skill)=>{%>
+        <button class="btn btn-outline-success"><%=skill%></button>
+        <%})%>
+      </div>
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#jobapplyform"
+      >
+        Apply Now
+      </button>
+      <p class="card-text">
+        <small class="text-body-secondary">Job Posted on&nbsp;</small>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="jobapplyform"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply to Job</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- Job Apply form -->
+        <h3>Just take few seconds to apply!!</h3>
+        <form action="/applyJob/<%=job.id%>" method="post">
+          <div class="input-group flex-nowrap mt-2">
+            <span class="input-group-text" id="addon-wrapping">Name</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your Name"
+              name="name"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <div class="input-group flex-nowrap mt-2">
+            <span class="input-group-text" id="addon-wrapping">Email</span>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter your Email"
+              name="email"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <div class="input-group flex-nowrap mt-2">
+            <span class="input-group-text" id="addon-wrapping"
+              >Contact Number</span
+            >
+            <input
+              type="number"
+              class="form-control"
+              placeholder="+91-"
+              name="phone_number"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <div class="input-group mt-2">
+            <label class="input-group-text" for="inputGroupFile01"
+              >Resume</label
+            >
+            <input type="file" class="form-control" id="inputGroupFile01" />
+          </div>
+          <button
+            type="submit"
+            style="width: 100%"
+            class="btn btn-success mt-2"
+          >
+            Apply
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .jobDlist {
+    list-style: none;
+  }
+
+  .jobDlist > li {
+    font-size: 18px;
+  }
+
+  .jobDlist > li > i {
+    font-size: 20px;
+  }
+
+  #seprate {
+    color: #ff2c90;
+  }
+</style>
