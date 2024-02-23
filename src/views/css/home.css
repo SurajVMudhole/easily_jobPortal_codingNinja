@@ -7,6 +7,14 @@
   --scnd-font: fira code;
 }
 
+.center {
+  text-align: center;
+}
+
+.white-colour {
+  color: white;
+}
+
 body {
   background-color: var(--thm-color) !important;
   width: 100%;

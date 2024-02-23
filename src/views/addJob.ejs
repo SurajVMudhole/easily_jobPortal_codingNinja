@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="./css/home.css" />
+<div class="container">
+  <h1 class="white-colour center">Add New job opening</h1>
+  <form action="/addjob" method="post">
+    <div class="input-group flex-nowrap m-4 mt-2">
+      <span class="input-group-text" id="addon-wrapping">Company Name</span>
+      <input
+        type="text"
+        name="companyname"
+        class="form-control"
+        placeholder="Enter company name"
+        aria-describedby="addon-wrapping"
+      />
+    </div>
+    <div class="input-group flex-nowrap m-4">
+      <span class="input-group-text" id="addon-wrapping">Job Catogory</span>
+      <input
+        type="text"
+        name="jobCatorgory"
+        class="form-control"
+        placeholder="Enter Catogory Name"
+        aria-describedby="addon-wrapping"
+      />
+    </div>
+    <div class="input-group flex-nowrap m-4">
+      <span class="input-group-text" id="addon-wrapping">Job Location</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Job Location"
+        aria-describedby="addon-wrapping"
+      />
+    </div>
+    <div class="input-group flex-nowrap m-4">
+      <span class="input-group-text" id="addon-wrapping">Package</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Job Package Range"
+        name="jobPackage"
+        aria-describedby="addon-wrapping"
+      />
+    </div>
+    <input type="select" name="skillsReq" />
+  </form>
+</div>
